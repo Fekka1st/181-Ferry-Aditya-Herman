@@ -13,12 +13,12 @@
                                 <div
                                     class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
                                     <div class="stats-icon purple mb-2">
-                                        <i class="iconly-boldShow"></i>
+                                        <i class="fa-solid fa-clipboard-list"></i>
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                    <h6 class="text-muted font-semibold">Profile Views</h6>
-                                    <h6 class="font-extrabold mb-0">112.000</h6>
+                                    <h6 class="text-muted font-semibold">Jumlah Daftar Obat</h6>
+                                    <h6 class="font-extrabold mb-0">256.000</h6>
                                 </div>
                             </div>
                         </div>
@@ -31,12 +31,12 @@
                                 <div
                                     class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
                                     <div class="stats-icon blue mb-2">
-                                        <i class="iconly-boldProfile"></i>
+                                        <i class="fa-solid fa-user-astronaut"></i>
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                    <h6 class="text-muted font-semibold">Followers</h6>
-                                    <h6 class="font-extrabold mb-0">183.000</h6>
+                                    <h6 class="text-muted font-semibold">Jumlah Pengguna</h6>
+                                    <h6 class="font-extrabold mb-0">4</h6>
                                 </div>
                             </div>
                         </div>
@@ -49,12 +49,12 @@
                                 <div
                                     class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
                                     <div class="stats-icon green mb-2">
-                                        <i class="iconly-boldAdd-User"></i>
+                                        <i class="fa-solid fa-money-bill-transfer"></i>
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                    <h6 class="text-muted font-semibold">Following</h6>
-                                    <h6 class="font-extrabold mb-0">80.000</h6>
+                                    <h6 class="text-muted font-semibold">Jumlah Transaksi</h6>
+                                    <h6 class="font-extrabold mb-0">10.432</h6>
                                 </div>
                             </div>
                         </div>
@@ -67,12 +67,12 @@
                                 <div
                                     class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
                                     <div class="stats-icon red mb-2">
-                                        <i class="iconly-boldBookmark"></i>
+                                        <i class="fa-solid fa-house-medical-circle-check"></i>
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                    <h6 class="text-muted font-semibold">Saved Post</h6>
-                                    <h6 class="font-extrabold mb-0">112</h6>
+                                    <h6 class="text-muted font-semibold">Total Checkup</h6>
+                                    <h6 class="font-extrabold mb-0">52</h6>
                                 </div>
                             </div>
                         </div>
@@ -83,7 +83,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Profile Visit</h4>
+                            <h4>Penjualan Bulanan</h4>
                         </div>
                         <div class="card-body">
                             <div id="chart-profile-visit"></div>
@@ -95,7 +95,7 @@
                 <div class="col-12 col-xl-4">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Profile Visit</h4>
+                            <h4>Penjualan</h4>
                         </div>
                         <div class="card-body">
                             <div class="row">
@@ -106,7 +106,7 @@
                                             <use
                                                 xlink:href="assets/static/images/bootstrap-icons.svg#circle-fill" />
                                         </svg>
-                                        <h5 class="mb-0 ms-3">Europe</h5>
+                                        <h5 class="mb-0 ms-3">Stock Keluar</h5>
                                     </div>
                                 </div>
                                 <div class="col-5">
@@ -124,7 +124,7 @@
                                             <use
                                                 xlink:href="assets/static/images/bootstrap-icons.svg#circle-fill" />
                                         </svg>
-                                        <h5 class="mb-0 ms-3">America</h5>
+                                        <h5 class="mb-0 ms-3">Stock Masuk</h5>
                                     </div>
                                 </div>
                                 <div class="col-5">
@@ -134,68 +134,53 @@
                                     <div id="chart-america"></div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-7">
-                                    <div class="d-flex align-items-center">
-                                        <svg class="bi text-danger" width="32" height="32" fill="blue"
-                                            style="width:10px">
-                                            <use
-                                                xlink:href="assets/static/images/bootstrap-icons.svg#circle-fill" />
-                                        </svg>
-                                        <h5 class="mb-0 ms-3">Indonesia</h5>
-                                    </div>
-                                </div>
-                                <div class="col-5">
-                                    <h5 class="mb-0 text-end">1025</h5>
-                                </div>
-                                <div class="col-12">
-                                    <div id="chart-indonesia"></div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-xl-8">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Latest Comments</h4>
+                            <h4>List Stock Obat Menipis</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-hover table-lg">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Comment</th>
+                                            <th width=20px>No</th>
+                                            <th>Nama Obat</th>
+                                            <th>Kategori Obat</th>
+                                            <th>Stock</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td class="col-3">
-                                                <div class="d-flex align-items-center">
-                                                    <div class="avatar avatar-md">
-                                                        <img src="./assets/compiled/jpg/5.jpg">
-                                                    </div>
-                                                    <p class="font-bold ms-3 mb-0">Si Cantik</p>
-                                                </div>
+                                            <td>
+                                                <p class="font-bold">1</p>
+                                            </td>
+                                            <td>
+                                                <p class="font-bold">Paracetamol</p>
+                                            </td>
+                                            <td>
+                                                <p class="font-bold">Pusing</p>
                                             </td>
                                             <td class="col-auto">
-                                                <p class=" mb-0">Congratulations on your graduation!</p>
+                                                <p class=" mb-0">20</p>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="col-3">
-                                                <div class="d-flex align-items-center">
-                                                    <div class="avatar avatar-md">
-                                                        <img src="./assets/compiled/jpg/2.jpg">
-                                                    </div>
-                                                    <p class="font-bold ms-3 mb-0">Si Ganteng</p>
-                                                </div>
+                                            <td>
+                                                <p class="font-bold">2</p>
+                                            </td>
+                                            <td>
+                                                <p class="font-bold">Amocilin</p>
+                                            </div>
+                                            <td>
+                                                <p class="font-bold">Pusing</p>
+                                            </td>
                                             </td>
                                             <td class="col-auto">
-                                                <p class=" mb-0">Wow amazing design! Can you make another
-                                                    tutorial for
-                                                    this design?</p>
+                                                <p class=" mb-0">10</p>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -211,56 +196,55 @@
                 <div class="card-body py-4 px-4">
                     <div class="d-flex align-items-center">
                         <div class="avatar avatar-xl">
-                            <img src="./assets/compiled/jpg/1.jpg" alt="Face 1">
+                            <img src="{{asset('./master/assets/compiled/jpg/1.jpg')}}" alt="User">
                         </div>
                         <div class="ms-3 name">
-                            <h5 class="font-bold">John Duck</h5>
-                            <h6 class="text-muted mb-0">@johnducky</h6>
+                            <h5 class="font-bold">Ferry Aditya Herman</h5>
+                            <h6 class="text-muted mb-0"></h6>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-header">
-                    <h4>Recent Messages</h4>
+                    <h4>Daftar Pengguna</h4>
                 </div>
                 <div class="card-content pb-4">
                     <div class="recent-message d-flex px-4 py-3">
                         <div class="avatar avatar-lg">
-                            <img src="./assets/compiled/jpg/4.jpg">
+                            <img src="https://cdn-icons-png.flaticon.com/512/147/147142.png">
                         </div>
                         <div class="name ms-4">
-                            <h5 class="mb-1">Hank Schrader</h5>
-                            <h6 class="text-muted mb-0">@johnducky</h6>
+                            <h5 class="mb-1">Renaldy Baleano Yohzain</h5>
+
                         </div>
                     </div>
                     <div class="recent-message d-flex px-4 py-3">
                         <div class="avatar avatar-lg">
-                            <img src="./assets/compiled/jpg/5.jpg">
+                            <img src="https://cdn-icons-png.flaticon.com/512/147/147142.png">
                         </div>
                         <div class="name ms-4">
-                            <h5 class="mb-1">Dean Winchester</h5>
-                            <h6 class="text-muted mb-0">@imdean</h6>
+                            <h5 class="mb-1">Tukiem</h5>
+
                         </div>
                     </div>
                     <div class="recent-message d-flex px-4 py-3">
                         <div class="avatar avatar-lg">
-                            <img src="./assets/compiled/jpg/1.jpg">
+                            <img src="https://cdn-icons-png.flaticon.com/512/147/147142.png">
                         </div>
                         <div class="name ms-4">
-                            <h5 class="mb-1">John Dodol</h5>
-                            <h6 class="text-muted mb-0">@dodoljohn</h6>
+                            <h5 class="mb-1">Aspi Roihan</h5>
+
                         </div>
                     </div>
                     <div class="px-4">
-                        <button class='btn btn-block btn-xl btn-outline-primary font-bold mt-3'>Start
-                            Conversation</button>
+                        <button class='btn btn-block btn-xl btn-outline-primary font-bold mt-3'>Cek Selengkapnya</button>
                     </div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-header">
-                    <h4>Visitors Profile</h4>
+                    <h4>Pelanggan</h4>
                 </div>
                 <div class="card-body">
                     <div id="chart-visitors-profile"></div>

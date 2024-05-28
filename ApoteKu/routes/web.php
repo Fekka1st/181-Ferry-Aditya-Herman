@@ -15,3 +15,10 @@ Route::get('/login', function(){
 Route::get('/dashboard', function(){
     return view('Admin.dashboard');
 });
+Route::get('/daftar_obat', function(){
+    return view('Admin.manajemen_produk.daftar_obat');
+});
+
+Route::get('/kategori_obat', function(){
+    return view('Admin.manajemen_produk.kategori_obat');
+});
