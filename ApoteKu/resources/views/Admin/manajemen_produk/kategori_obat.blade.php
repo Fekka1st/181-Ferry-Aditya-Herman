@@ -9,7 +9,7 @@
                 <h1>Kategori Obat</h1>
                 <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#createModal">Tambah
                     Kategori Obat</button>
-                 <table id="kategoriObatTable" class="table table-striped dataTable-table">
+                <table id="kategoriObatTable" class="table table-striped dataTable-table">
                     <thead>
                         <tr>
                             <th width=10px>No</th>
@@ -23,11 +23,11 @@
                             <td>{{ $index+1 }}</td>
                             <td>{{ $kategoriObat->nama_kategori }}</td>
                             <td>
-                                <button class="btn btn-warning" data-bs-toggle="modal"
-                                    data-bs-target="#editModal{{ $kategoriObat->id }}">Edit</button>
+                                <button class="btn btn-warning btn-edit" data-id="{{ $kategoriObat->id }}">Edit</button>
 
-                                    @method('DELETE')
-                                    <a href="{{ route('kategori-obats.destroy', $kategoriObat->id) }}" class="btn btn-danger" data-confirm-delete="true">Delete</a>
+                                @method('DELETE')
+                                <a href="{{ route('kategori-obats.destroy', $kategoriObat->id) }}"
+                                    class="btn btn-danger" data-confirm-delete="true">Delete</a>
                             </td>
                         </tr>
                         @endforeach
@@ -63,65 +63,78 @@
     </div>
 </div>
 
-<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+@foreach($kategoriObats as $kategoriObat)
+<!-- Modal Edit -->
+<div class="modal fade" id="editModal{{ $kategoriObat->id }}" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="editModalLabel">Edit Kategori Obat</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="{{ route('kategori-obats.update', $kategoriObat->id) }}" method="POST">
+            <form id="editForm{{ $kategoriObat->id }}" action="{{ route('kategori-obats.update', $kategoriObat->id) }}" method="POST">
                 @csrf
+                @method('PUT')
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label for="nama" class="form-label">Nama</label>
-                        <input type="text" class="form-control" name="nama_kategori" id="nama_kategori" value="" required>
+                        <label for="nama_kategori" class="form-label">Nama Kategori</label>
+                        <input type="text" class="form-control" name="nama_kategori" id="nama_kategori{{ $kategoriObat->id }}" value="{{ $kategoriObat->nama_kategori }}" required>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Tambah</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+@endforeach
+
 
 
 @endsection
 
 @push('scripts')
-<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
 <script src="cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
 <script>
-$(document).ready( function () {
-    $('#kategoriObatTable').DataTable({
-        responsive: true,
+    $(document).ready(function () {
+        $('#kategoriObatTable').DataTable({
+            responsive: true,
+        });
+
     });
 
-});
-$(document).on('click', '.btn-edit', function () {
-            var dataId = $(this).data('id');
-            var formAction = '/kelola_kategori/update/' + dataId;
-            $('#editForm').attr('action', formAction);
+</script>
+<script>
+    $(document).ready(function () {
+        $('.btn-edit').click(function () {
+            var id = $(this).data('id');
+            $('#editModal' + id).modal('show');
+        });
 
-            // Membuat permintaan Ajax untuk mendapatkan data informasi
+        $('#editForm').submit(function (e) {
+            e.preventDefault();
+            var form = $(this);
+            var url = form.attr('action');
+            var formData = form.serialize();
+
             $.ajax({
-                url: '/kelola_kategori/' + dataId + '/edit',
-                method: 'GET',
+                url: url,
+                type: 'PUT',
+                data: formData,
                 success: function (response) {
-                    // Isi formulir penyuntingan dengan data yang diambil dari server
-                    var data = response.kategori;
-                    $('#editModal').find('#namakategori').val(data.Nama_Kategori);
-                    $('#editModal').find('#keterangan').val(data.Keterangan);
-                    $('#editModal').modal('show');
-                    console.log(response);
+                    $('#editModal{{ $kategoriObat->id }}').modal('hide');
+                    location.reload(); // Reload halaman untuk memperbarui tabel
                 },
                 error: function (xhr, status, error) {
                     console.error(xhr.responseText);
                 }
             });
         });
+    });
 
 </script>
 <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>

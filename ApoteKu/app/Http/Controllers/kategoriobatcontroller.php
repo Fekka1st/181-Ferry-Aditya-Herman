@@ -32,19 +32,18 @@ class kategoriobatcontroller extends Controller
             return back();
         }
     }
-
-    public function edit(kategori_obats $kategoriObat)
+    public function edit(kategori_obats $kategori_obat)
     {
-        return view('Admin.manajemen_produk.edit_kategori_obat', compact('kategoriObat'));
+        return view('edit', compact('kategori_obat'));
     }
 
-    public function update(Request $request, kategori_obats $kategoriObat)
+    public function update(Request $request, kategori_obats $kategori_obat)
     {
         $request->validate([
-            'nama_kategori' => 'required|unique:kategori_obats,nama,' . $kategoriObat->id,
+            'nama_kategori' => 'required|unique:kategori_obats,nama_kategori,' . $kategori_obat->id,
         ]);
         try {
-            $kategoriObat->update($request->all());
+            $kategori_obat->update($request->all());
             toast('Data Berhasil diedit','success');
             return back();
         } catch (\Exception $e) {
