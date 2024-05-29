@@ -216,7 +216,6 @@
                         </div>
                         <div class="name ms-4">
                             <h5 class="mb-1">Renaldy Baleano Yohzain</h5>
-
                         </div>
                     </div>
                     <div class="recent-message d-flex px-4 py-3">
@@ -225,7 +224,6 @@
                         </div>
                         <div class="name ms-4">
                             <h5 class="mb-1">Tukiem</h5>
-
                         </div>
                     </div>
                     <div class="recent-message d-flex px-4 py-3">
@@ -234,7 +232,6 @@
                         </div>
                         <div class="name ms-4">
                             <h5 class="mb-1">Aspi Roihan</h5>
-
                         </div>
                     </div>
                     <div class="px-4">

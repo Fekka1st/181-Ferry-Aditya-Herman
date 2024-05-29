@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    @include('sweetalert::alert')
     <script src="{{asset('master/assets/static/js/initTheme.js')}}"></script>
     <div id="app">
         @include('layouting.asidebar')
