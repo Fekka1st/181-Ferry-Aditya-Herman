@@ -3,6 +3,7 @@
 use App\Http\Controllers\daftraobatcontroller;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\kategoriobatcontroller;
+use App\Http\Controllers\manajemenpenggunacontroller;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\stokmasukcontroller;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +25,8 @@ Route::middleware(['auth', 'role:Admin'])->group(function () {
     Route::resource('daftar-obats', daftraobatcontroller::class);
     //stok masuk
     Route::resource('stok-masuk', stokmasukcontroller::class);
+    //manajemen pengguna
+    Route::resource('manajemen-pengguna', manajemenpenggunacontroller::class);
 });
 
 
