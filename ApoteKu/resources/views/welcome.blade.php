@@ -83,7 +83,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="{{asset('beranda/img/Logo.webp')}}" class="img-fluid animated" alt="">
+                    <img src="{{asset('beranda/img/APOTEKU.png')}}" class="img-fluid animated" alt="">
                 </div>
             </div>
         </div>

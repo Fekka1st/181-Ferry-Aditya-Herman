@@ -67,8 +67,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                    <h6 class="text-muted font-semibold">Total Checkup</h6>
-                                    <h6 class="font-extrabold mb-0">52</h6>
+                                    <h6 class="text-muted font-semibold">Total Obat Semua</h6>
+                                    <h6 class="font-extrabold mb-0">{{$totalStokMasuk}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -204,7 +204,8 @@
                 </div>
                 @endforeach
                 <div class="px-4">
-                    <button class='btn btn-block btn-xl btn-outline-primary font-bold mt-3'>Cek Selengkapnya</button>
+                    <a href="/manajemen-pengguna"  class='btn btn-block btn-xl btn-outline-primary font-bold mt-3'>Cek Selengkapnya</a>
+
                 </div>
             </div>
             <div class="card">
