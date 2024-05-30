@@ -1,3 +1,4 @@
+@if(auth()->user()->role->nama_role == 'Admin')
 <div id="sidebar">
     <div class="sidebar-wrapper active">
         <div class="sidebar-header position-relative">
@@ -113,13 +114,20 @@
                         <span>Pengaturan</span>
                     </a>
                 </li>
+                <li class="sidebar-item  ">
+                    <a href="/logout" class='sidebar-link'>
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
 </div>
+@endif
 
 {{-- Kasir --}}
-{{--
+@if(auth()->user()->role->nama_role == 'Kasir')
      <ul class="menu">
                 <li class="sidebar-title">Menu</li>
                 <li class="sidebar-item active ">
@@ -184,20 +192,27 @@
                     </ul>
                 </li>
                 <li class="sidebar-item  ">
-                    <a href="form-layout.html" class='sidebar-link'>
+                    <a href="/profile" class='sidebar-link'>
                         <i class="bi bi-file-earmark-medical-fill"></i>
                         <span>Pengaturan</span>
                     </a>
-                </li> --}}
-
+                </li>
+@endif
 
 {{-- Supplier --}}
-{{-- <ul class="menu">
+@if(auth()->user()->role->nama_role == 'Supplier')
+<ul class="menu">
                 <li class="sidebar-title">Menu</li>
                 <li class="sidebar-item active ">
-                    <a href="index.html" class='sidebar-link'>
+                    <a href="/dashboard" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar-item  ">
+                    <a href="/daftar-obats" class='sidebar-link'>
+                        <i class="bi bi-file-earmark-medical-fill"></i>
+                        <span>Manajemen Produk</span>
                     </a>
                 </li>
                 <li class="sidebar-item  has-sub">
@@ -212,17 +227,7 @@
                         <li class="submenu-item  ">
                             <a href="component-badge.html" class="submenu-link">Stock Keluar</a>
                         </li>
-                         <li class="submenu-item  ">
-                            <a href="component-badge.html" class="submenu-link">Peringatan Stock Rendah</a>
-                        </li>
                     </ul>
-                </li>
-
-                <li class="sidebar-item  ">
-                    <a href="form-layout.html" class='sidebar-link'>
-                        <i class="bi bi-file-earmark-medical-fill"></i>
-                        <span>Manajemen Produk</span>
-                    </a>
                 </li>
                 <li class="sidebar-item  has-sub">
                     <a href="#" class='sidebar-link'>
@@ -236,9 +241,9 @@
                     </ul>
                 </li>
                 <li class="sidebar-item  ">
-                    <a href="form-layout.html" class='sidebar-link'>
+                    <a href="/profile" class='sidebar-link'>
                         <i class="bi bi-file-earmark-medical-fill"></i>
                         <span>Pengaturan</span>
                     </a>
-                </li> --}}
-
+                </li>
+@endif

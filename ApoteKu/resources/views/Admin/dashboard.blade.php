@@ -10,15 +10,14 @@
                     <div class="card">
                         <div class="card-body px-4 py-4-5">
                             <div class="row">
-                                <div
-                                    class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                                <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
                                     <div class="stats-icon purple mb-2">
                                         <i class="fa-solid fa-clipboard-list"></i>
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                                     <h6 class="text-muted font-semibold">Jumlah Daftar Obat</h6>
-                                    <h6 class="font-extrabold mb-0">256.000</h6>
+                                    <h6 class="font-extrabold mb-0">{{$jumlahobat}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -28,8 +27,7 @@
                     <div class="card">
                         <div class="card-body px-4 py-4-5">
                             <div class="row">
-                                <div
-                                    class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                                <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
                                     <div class="stats-icon blue mb-2">
                                         <i class="fa-solid fa-user-astronaut"></i>
                                     </div>
@@ -46,8 +44,7 @@
                     <div class="card">
                         <div class="card-body px-4 py-4-5">
                             <div class="row">
-                                <div
-                                    class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                                <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
                                     <div class="stats-icon green mb-2">
                                         <i class="fa-solid fa-money-bill-transfer"></i>
                                     </div>
@@ -64,8 +61,7 @@
                     <div class="card">
                         <div class="card-body px-4 py-4-5">
                             <div class="row">
-                                <div
-                                    class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                                <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
                                     <div class="stats-icon red mb-2">
                                         <i class="fa-solid fa-house-medical-circle-check"></i>
                                     </div>
@@ -103,8 +99,7 @@
                                     <div class="d-flex align-items-center">
                                         <svg class="bi text-primary" width="32" height="32" fill="blue"
                                             style="width:10px">
-                                            <use
-                                                xlink:href="assets/static/images/bootstrap-icons.svg#circle-fill" />
+                                            <use xlink:href="assets/static/images/bootstrap-icons.svg#circle-fill" />
                                         </svg>
                                         <h5 class="mb-0 ms-3">Stock Keluar</h5>
                                     </div>
@@ -121,8 +116,7 @@
                                     <div class="d-flex align-items-center">
                                         <svg class="bi text-success" width="32" height="32" fill="blue"
                                             style="width:10px">
-                                            <use
-                                                xlink:href="assets/static/images/bootstrap-icons.svg#circle-fill" />
+                                            <use xlink:href="assets/static/images/bootstrap-icons.svg#circle-fill" />
                                         </svg>
                                         <h5 class="mb-0 ms-3">Stock Masuk</h5>
                                     </div>
@@ -154,35 +148,20 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach ($obats as $item => $obat)
                                         <tr>
                                             <td>
-                                                <p class="font-bold">1</p>
+                                                <p class="font-bold">{{$item+1}}</p>
                                             </td>
                                             <td>
-                                                <p class="font-bold">Paracetamol</p>
+                                                <p class="font-bold">{{$obat->nama}}</p>
                                             </td>
-                                            <td>
-                                                <p class="font-bold">Pusing</p>
-                                            </td>
+                                            <td><p class="font-bold">{{$obat->kategoriObat->nama_kategori }}</p></td>
                                             <td class="col-auto">
-                                                <p class=" mb-0">20</p>
+                                                <p class=" mb-0">{{$obat->stok}}</p>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                <p class="font-bold">2</p>
-                                            </td>
-                                            <td>
-                                                <p class="font-bold">Amocilin</p>
-                                            </div>
-                                            <td>
-                                                <p class="font-bold">Pusing</p>
-                                            </td>
-                                            </td>
-                                            <td class="col-auto">
-                                                <p class=" mb-0">10</p>
-                                            </td>
-                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

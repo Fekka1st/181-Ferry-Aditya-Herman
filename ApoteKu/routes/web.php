@@ -18,12 +18,10 @@ Route::middleware(['auth', 'role:Admin'])->group(function () {
 
     // kelola kategori
     Route::resource('kategori-obats', kategoriobatcontroller::class);
-    Route::get('kategori-obats/{kategori_obat}/edit', [kategoriobatcontroller::class, 'edit'])->name('kategori-obats.edit');
     Route::put('kategori-obats/{kategori_obat}', [kategoriobatcontroller::class, 'update'])->name('kategori-obats.update');
     // Daftar Obat
     Route::resource('daftar-obats', daftraobatcontroller::class);
-    Route::get('daftar-obats/{kategori_obat}/edit', [daftraobatcontroller::class, 'edit'])->name('daftar-obats.edit');
-    Route::put('daftar-obats/{kategori_obat}', [daftraobatcontroller::class, 'update'])->name('daftar-obats.update');
+    // Route::put('daftar-obats/{obat}', [daftraobatcontroller::class, 'update'])->name('daftar-obats.update');
 });
 
 
