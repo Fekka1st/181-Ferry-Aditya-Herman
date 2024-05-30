@@ -37,6 +37,8 @@ class User extends Authenticatable
      *
      * @return array<string, string>
      */
+
+
     protected function casts(): array
     {
         return [
@@ -44,4 +46,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public function role()
+{
+    return $this->belongsTo(Roles::class, 'role_id');
+}
+
 }

@@ -100,12 +100,11 @@
     crossorigin="anonymous"></script>
 <script src="cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
 <script>
-    $(document).ready(function () {
-        $('#kategoriObatTable').DataTable({
-            responsive: true,
-        });
-
+   $(document).ready(function() {
+    $('#kategoriObatTable').DataTable({
+        responsive: true,
     });
+});
 
 </script>
 <script>

@@ -36,7 +36,7 @@
                                 </div>
                                 <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                                     <h6 class="text-muted font-semibold">Jumlah Pengguna</h6>
-                                    <h6 class="font-extrabold mb-0">4</h6>
+                                    <h6 class="font-extrabold mb-0">{{$jumlah}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -199,8 +199,8 @@
                             <img src="{{asset('./master/assets/compiled/jpg/1.jpg')}}" alt="User">
                         </div>
                         <div class="ms-3 name">
-                            <h5 class="font-bold">Ferry Aditya Herman</h5>
-                            <h6 class="text-muted mb-0"></h6>
+                            <h5 class="font-bold">{{$user->name}}</h5>
+                            <h6 class="text-muted mb-0">{{$user->role->nama_role}}</h6>
                         </div>
                     </div>
                 </div>
@@ -209,34 +209,21 @@
                 <div class="card-header">
                     <h4>Daftar Pengguna</h4>
                 </div>
+                @foreach($datauser as $data)
                 <div class="card-content pb-4">
                     <div class="recent-message d-flex px-4 py-3">
                         <div class="avatar avatar-lg">
-                            <img src="https://cdn-icons-png.flaticon.com/512/147/147142.png">
+                            <img src="{{$data->foto}}">
                         </div>
                         <div class="name ms-4">
-                            <h5 class="mb-1">Renaldy Baleano Yohzain</h5>
+                            <h5 class="mb-1">{{$data->name}}</h5>
+                            <h6 class="mb-1">{{$data->nama_role}}</h6>
                         </div>
                     </div>
-                    <div class="recent-message d-flex px-4 py-3">
-                        <div class="avatar avatar-lg">
-                            <img src="https://cdn-icons-png.flaticon.com/512/147/147142.png">
-                        </div>
-                        <div class="name ms-4">
-                            <h5 class="mb-1">Tukiem</h5>
-                        </div>
-                    </div>
-                    <div class="recent-message d-flex px-4 py-3">
-                        <div class="avatar avatar-lg">
-                            <img src="https://cdn-icons-png.flaticon.com/512/147/147142.png">
-                        </div>
-                        <div class="name ms-4">
-                            <h5 class="mb-1">Aspi Roihan</h5>
-                        </div>
-                    </div>
-                    <div class="px-4">
-                        <button class='btn btn-block btn-xl btn-outline-primary font-bold mt-3'>Cek Selengkapnya</button>
-                    </div>
+                </div>
+                @endforeach
+                <div class="px-4">
+                    <button class='btn btn-block btn-xl btn-outline-primary font-bold mt-3'>Cek Selengkapnya</button>
                 </div>
             </div>
             <div class="card">

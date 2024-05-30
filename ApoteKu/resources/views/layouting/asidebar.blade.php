@@ -59,10 +59,10 @@
                     </a>
                     <ul class="submenu">
                         <li class="submenu-item  ">
-                            <a href="/daftar_obat" class="submenu-link">Daftar Obat</a>
+                            <a href="/daftar-obats" class="submenu-link">Daftar Obat</a>
                         </li>
                         <li class="submenu-item  ">
-                            <a href="kategori_obat" class="submenu-link">Kategori Obat</a>
+                            <a href="kategori-obats" class="submenu-link">Kategori Obat</a>
                         </li>
                     </ul>
                 </li>
@@ -108,7 +108,7 @@
                     </ul>
                 </li>
                 <li class="sidebar-item  ">
-                    <a href="form-layout.html" class='sidebar-link'>
+                    <a href="/profile" class='sidebar-link'>
                         <i class="bi bi-file-earmark-medical-fill"></i>
                         <span>Pengaturan</span>
                     </a>
