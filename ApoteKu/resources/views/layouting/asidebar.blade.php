@@ -75,10 +75,10 @@
                     </a>
                     <ul class="submenu">
                         <li class="submenu-item  ">
-                            <a href="component-alert.html" class="submenu-link">Stock Masuk</a>
+                            <a href="stok-masuk" class="submenu-link">Stock Masuk</a>
                         </li>
                         <li class="submenu-item  ">
-                            <a href="component-badge.html" class="submenu-link">Stock Keluar</a>
+                            <a href="stok-keluar" class="submenu-link">Stock Keluar</a>
                         </li>
                     </ul>
                 </li>

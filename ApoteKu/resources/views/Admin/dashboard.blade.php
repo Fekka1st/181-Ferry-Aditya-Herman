@@ -122,10 +122,10 @@
                                     </div>
                                 </div>
                                 <div class="col-5">
-                                    <h5 class="mb-0 text-end">375</h5>
+                                    <h5 class="mb-0 text-end">{{$totalStokMasuk}}</h5>
                                 </div>
                                 <div class="col-12">
-                                    <div id="chart-america"></div>
+                                    <div id="chart"></div>
                                 </div>
                             </div>
                         </div>
@@ -156,7 +156,9 @@
                                             <td>
                                                 <p class="font-bold">{{$obat->nama}}</p>
                                             </td>
-                                            <td><p class="font-bold">{{$obat->kategoriObat->nama_kategori }}</p></td>
+                                            <td>
+                                                <p class="font-bold">{{$obat->kategoriObat->nama_kategori }}</p>
+                                            </td>
                                             <td class="col-auto">
                                                 <p class=" mb-0">{{$obat->stok}}</p>
                                             </td>
@@ -175,7 +177,7 @@
                 <div class="card-body py-4 px-4">
                     <div class="d-flex align-items-center">
                         <div class="avatar avatar-xl">
-                            <img src="{{asset('./master/assets/compiled/jpg/1.jpg')}}" alt="User">
+                            <img src="{{$user->foto}}" alt="User">
                         </div>
                         <div class="ms-3 name">
                             <h5 class="font-bold">{{$user->name}}</h5>
@@ -220,4 +222,40 @@
 
 @push('scripts')
 <script src="{{asset('/master/assets/js/custom/widgets.js')}}"></script>
+<script>
+    var options = {
+        chart: {
+            height: 280,
+            type: "area"
+        },
+        dataLabels: {
+            enabled: false
+        },
+        series: [{
+            name: "Stok Masuk",
+            data:  @json($chartstokmasuk)
+        }],
+        fill: {
+            type: "gradient",
+            gradient: {
+                shadeIntensity: 1,
+                opacityFrom: 0.7,
+                opacityTo: 0.9,
+                stops: [0, 90, 100]
+            }
+        },
+        xaxis: {
+            categories: [
+                "Jan", "Feb", "Mar", "Apr", "Mei", "Jun",
+                "Jul", "Agu", "Sep", "Okt", "Nov", "Des"
+            ]
+        }
+    };
+
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+
+    chart.render();
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 @endpush

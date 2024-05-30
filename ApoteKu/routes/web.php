@@ -4,6 +4,7 @@ use App\Http\Controllers\daftraobatcontroller;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\kategoriobatcontroller;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\stokmasukcontroller;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -21,7 +22,8 @@ Route::middleware(['auth', 'role:Admin'])->group(function () {
     Route::put('kategori-obats/{kategori_obat}', [kategoriobatcontroller::class, 'update'])->name('kategori-obats.update');
     // Daftar Obat
     Route::resource('daftar-obats', daftraobatcontroller::class);
-    // Route::put('daftar-obats/{obat}', [daftraobatcontroller::class, 'update'])->name('daftar-obats.update');
+    //stok masuk
+    Route::resource('stok-masuk', stokmasukcontroller::class);
 });
 
 

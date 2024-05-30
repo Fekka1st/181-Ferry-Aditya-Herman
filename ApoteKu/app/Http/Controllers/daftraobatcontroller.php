@@ -14,8 +14,8 @@ class daftraobatcontroller extends Controller
     {
         $daftar_obats = obats::all();
         $kategori_obats = kategori_obats::get(['id','nama_kategori']);
-        $title = 'Delete User!';
-        $text = "Are you sure you want to delete?";
+        $title = 'Hapus Data!';
+        $text = "Kamu Yakin Mau Hapus Data?";
         confirmDelete($title, $text);
         return view('Admin.manajemen_produk.daftar_obat', compact('daftar_obats','kategori_obats'));
     }
@@ -53,31 +53,6 @@ class daftraobatcontroller extends Controller
         // dd($request->all());
         return redirect()->route('daftar-obats.index');
     }
-
-    // public function update(Request $request, Obats $obat)
-    // {
-    //     $request->validate([
-    //         'nama' => 'required',
-    //         'kategori_obats_id' => 'required',
-    //         'harga_beli' => 'required|numeric',
-    //         'harga_jual' => 'required|numeric',
-    //         'satuan' => 'required'
-    //     ]);
-    //     try {
-    //         $obat->update([
-    //             'nama' => $request->nama,
-    //             'kategori_obats_id' => $request->kategori_obats_id,
-    //             'harga_beli' => $request->harga_beli,
-    //             'harga_jual' => $request->harga_jual,
-    //             'satuan' => $request->satuan,
-    //         ]);
-    //         Alert::success('Success', 'Obat berhasil diperbarui');
-    //     } catch (\Exception $e) {
-    //         Alert::error('Error', 'Gagal memperbarui obat');
-    //     }
-
-    //    return back();
-    // }
 
     public function update(Request $request , $id)
     {
