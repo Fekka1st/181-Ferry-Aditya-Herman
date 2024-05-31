@@ -15,8 +15,10 @@ class dashboardController extends Controller
     {
         $user = Auth::user();
         $datauser = User::join('roles', 'users.role_id', '=', 'roles.id')
-                    ->take(3)
-                    ->get(['users.foto', 'users.name', 'roles.nama_role']);
+        ->orderBy('users.id', 'desc')
+        ->take(3)
+        ->get(['users.foto', 'users.name', 'roles.nama_role']);
+
         $jumlah = User::count();
         $obats = obats::where('stok', '<', 5)->get();
         $jumlahobat = obats::count();
